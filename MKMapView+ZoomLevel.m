@@ -92,9 +92,9 @@
 }
 
 //KMapView cannot display tiles that cross the pole (as these would involve wrapping the map from top to bottom, something that a Mercator projection just cannot do).
--(MKCoordinateRegion)coordinateRegionWithMapView:(MKMapView *)mapView
-                                centerCoordinate:(CLLocationCoordinate2D)centerCoordinate
-                                    andZoomLevel:(NSUInteger)zoomLevel
+- (MKCoordinateRegion)coordinateRegionWithMapView:(MKMapView *)mapView
+                                 centerCoordinate:(CLLocationCoordinate2D)centerCoordinate
+                                     andZoomLevel:(NSUInteger)zoomLevel
 {
 	// clamp lat/long values to appropriate ranges
 	centerCoordinate.latitude = MIN(MAX(-90.0, centerCoordinate.latitude), 90.0);
@@ -149,7 +149,8 @@
 	return region;
 }
 
-- (NSUInteger) zoomLevel {
+- (NSUInteger)zoomLevel 
+{
     MKCoordinateRegion region = self.region;
     
     double centerPixelX = [MKMapView longitudeToPixelSpaceX: region.center.longitude];
@@ -163,6 +164,5 @@
     
     return zoomLevel;
 }
-
 
 @end
