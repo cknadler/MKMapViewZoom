@@ -1,17 +1,16 @@
 # About MKMapView category
-The included MKMapView category for supporting zoom level, code belongs to Troy Brant
-http://troybrant.net/blog/2010/01/mkmapview-and-zoom-levels-a-visual-guide/
+The included MKMapView category for supporting zoom level, code belongs to Troy Brant -
+[http://troybrant.net/blog/2010/01/mkmapview-and-zoom-levels-a-visual-guide/][1]
 
 If you have ever built a web application using the Google Maps API, you are likely intimately familiar with this line of code:
 
-map.setCenter(new google.maps.LatLng(37.4419, -122.1419), 13);
+    map.setCenter(new google.maps.LatLng(37.4419, -122.1419), 13);
+    
 To implement this you can use the attached category. 
 
 In your view controller where you declare MKMapView simply import "MKMapView+ZoomLevel.h" 
 
-
 # Example
-
 
 	MKCoordinateRegion region;
     CLLocationCoordinate2D c;
@@ -20,17 +19,13 @@ In your view controller where you declare MKMapView simply import "MKMapView+Zoo
     region.center = c;
     [mapView setCenterCoordinate:c zoomLevel:13 animated:YES];
 
-
-
 # Note
 To get the current zoom level 
 
 	int level = [mapView zoomLevel];
 
-
 # Questions
-http://troybrant.net/blog/2010/01/set-the-zoom-level-of-an-mkmapview/
-
+[http://troybrant.net/blog/2010/01/set-the-zoom-level-of-an-mkmapview/][1]
 
 # License
 Copyright (c) 2010 Troy Brant
@@ -53,3 +48,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+[1]: http://troybrant.net/blog/2010/01/mkmapview-and-zoom-levels-a-visual-guide/
